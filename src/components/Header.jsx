@@ -36,7 +36,7 @@ const Header = () => {
 
 
     return (
-        <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4  bg-black text-white md:px-5 bg-white dark:bg-black">
+        <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4  bg-black text-white md:px-5 dark:bg-black">
 
            {loading && <Loader/>} 
 
@@ -54,7 +54,7 @@ const Header = () => {
             
             <Link to="/" className="flex h-5 items-center">
                     <img
-                        className="h-full md:block"
+                        className="h-full hidden md:block"
                         src={ytLogo}
                         alt="Youtube"
                     />
