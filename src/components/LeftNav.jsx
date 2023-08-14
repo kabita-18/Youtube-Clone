@@ -28,7 +28,7 @@ const LeftNav = () => {
             <div className="flex px-5 flex-col"></div>
             {categories.map((item) => {
                 return(
-                    <>
+                    <div key ={item.name}>
                         <LeftNavMenuItems
                             text={item.type === "home" ?"Home" : item.name}
                             icon = {item.icon}
@@ -45,7 +45,7 @@ const LeftNav = () => {
                         {item.divider && (
                             <hr className='my-5 border-white/[0.2]'/>
                         )}
-                    </>
+                    </div>
                 )
             })}
             <hr className='my-5 border-white/[0.2]'/>
