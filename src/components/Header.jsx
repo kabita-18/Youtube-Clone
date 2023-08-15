@@ -34,6 +34,12 @@ const Header = () => {
     const {pathname} = useLocation();
     const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
 
+    const searchButtonClickHandler = () => {
+        if (searchQuery?.length > 0) {
+            navigate(`/searchResult/${searchQuery}`);
+        }
+    };
+
 
     return (
         <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4  bg-black text-white md:px-5 dark:bg-black">
@@ -56,12 +62,12 @@ const Header = () => {
                     <img
                         className="h-full hidden md:block"
                         src={ytLogo}
-                        alt="Youtube"
+                        alt="Youtube Logo"
                     />
                     <img
                         className="h-full md:hidden"
                         src={ytLogoMobile}
-                        alt="Youtube"
+                        alt="Youtube Logo"
                     />
                 </Link>
             </div>
@@ -80,7 +86,9 @@ const Header = () => {
                         
                     </div>
                     <button className='w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]'>
-                            <IoIosSearch className='text-white text-xl'/>
+                            <IoIosSearch type="submit"
+                            className='text-white text-xl'
+                            onClick={searchButtonClickHandler}/>
                     </button>        
            </div>
            <div className="flex items-center">
@@ -92,11 +100,12 @@ const Header = () => {
                     <FiBell className='text-white text-xl cursor-pointer'/>
                 </div>
 
-                <div className='flex h-8 w-8 overflow-hidden rounded-full md:ml-4'>
+            </div>
+            
+            <div className='flex h-8 w-8 overflow-hidden rounded-full md:ml-4'>
                     <img src="https://xsgames.co/randomusers/assets/avatars/female/60.jpg"></img>
                 </div>
 
-            </div>
            </div>
             
         </div>
